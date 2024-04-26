@@ -1,6 +1,119 @@
+/* styles.css */
+
 /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the entire content */
+#content {
+    max-width: 100%; /* Adjust the maximum width according to your needs */
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+    /* Estilos para el encabezado */
+}
+
+/* Hero section styles */
+.hero {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hero img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+#delorean {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#delorean h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#delorean ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#delorean li {
+    margin-bottom: 5px;
+}
+
+#delorean button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Delorean reviews section styles */
+.delorean_reviews {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.delorean_reviews h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.delorean_reviews ul {
+    list-style: none;
+}
+
+.delorean_reviews li {
+    margin-bottom: 10px;
+}
+
+/* Delorean upgrades section styles */
+.delorean-upgrades {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delorean-upgrades img {
+    max-width: 100%;
+}
+
+.upgrade-info {
+    text-align: center;
+    font-size: 14px;
+}
+
