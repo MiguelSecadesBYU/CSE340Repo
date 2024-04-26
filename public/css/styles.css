@@ -1,5 +1,3 @@
-/* styles.css */
-
 /******* Change Box Model ***************/
 *,
 *:before,
@@ -7,113 +5,112 @@
   box-sizing: border-box;
 }
 
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-/* Container for the entire content */
-#content {
-    max-width: 100%; /* Adjust the maximum width according to your needs */
-    margin: 0 auto;
-    padding: 20px;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 /* Header styles */
-header {
-    /* Estilos para el encabezado */
+#top-header {
+  background-color: #fff; /* White background color */
+  color: #222; /* Dark text color */
+  padding: 10px 20px; /* Add some padding for spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.siteName a {
+  color: #222; /* Dark link color */
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.siteName a:hover {
+  text-decoration: underline;
+}
+
+#tools a {
+  color: #222; /* Dark link color */
+  text-decoration: none;
+  font-size: 14px;
+  padding-right: 20px;
+}
+
+#tools a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color:#fff;
+  padding: 10px 0;
+}
+
+nav li {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+/* Footer styles */
+footer {
+  padding: 10px 20px; /* Add some padding for spacing */
 }
 
 /* Hero section styles */
 .hero {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
 .hero h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .hero img {
-    max-width: 100%;
-    margin-bottom: 20px;
+  max-width: 100%;
+  height: auto; /* Ensure image maintains aspect ratio */
+  margin-bottom: 20px;
 }
 
 #delorean {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Enable positioning */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  color: #007bff; /* Light blue text color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width:fit-content; /* Adjust as needed */
+  margin: 0 auto; /* Center horizontally */
+  z-index: 1; /* Ensure it's above the image */
 }
 
 #delorean h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 #delorean ul {
-    list-style: none;
-    margin-bottom: 20px;
+  list-style: none;
+  margin-bottom: 20px;
 }
 
 #delorean li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 #delorean button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 75%;
 }
-
-/* Delorean reviews section styles */
-.delorean_reviews {
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-.delorean_reviews h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.delorean_reviews ul {
-    list-style: none;
-}
-
-.delorean_reviews li {
-    margin-bottom: 10px;
-}
-
-/* Delorean upgrades section styles */
-.delorean-upgrades {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.delorean-upgrades img {
-    max-width: 100%;
-}
-
-.upgrade-info {
-    text-align: center;
-    font-size: 14px;
-}
-
