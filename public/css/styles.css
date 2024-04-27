@@ -77,8 +77,10 @@ footer {
 }
 
 .hero img {
+  display:block;
   max-width: 100%;
   height: auto; /* Ensure image maintains aspect ratio */
+  margin:auto;
   
 }
 
@@ -131,7 +133,7 @@ footer {
 .delorean_upgrades {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.2fr repeat(2, 1fr);
+  grid-template-rows: auto auto auto; 
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   padding: 20px;
@@ -143,33 +145,112 @@ footer {
 }
 #upgrade1{
   grid-area: 2 / 1 / 3 / 2;
-  background-color: #007bff;
-  color:#fff;
+  background-color: #C6EBFE;
+  color:#222;
   width: 125px;
   padding: 10px;
   border-radius: 10px;
 }
 #upgrade2{
   grid-area: 2 / 2 / 3 / 3;
-  background-color: #007bff;
-  color:#fff;
+  background-color: #C6EBFE;
+  color:#222;
   width: 125px;
   padding: 10px;
   border-radius: 10px;
 }
 #upgrade3{
   grid-area: 3 / 1 / 4 / 2; 
-  background-color: #007bff;
-  color:#fff;
+  background-color: #C6EBFE;
+  color:#222;
   width: 125px;
   padding: 10px;
   border-radius: 10px;
 }
 #upgrade4{
   grid-area: 3 / 2 / 4 / 3;
-  background-color: #007bff;
-  color:#fff;
+  background-color: #C6EBFE;
+  color:#222;
   width: 125px;
   padding: 10px;
   border-radius: 10px;
+}
+
+
+/* Media query for devices with a width greater than 768px */
+@media screen and (min-width: 768px) {
+  /* Specific styles for large devices */
+  /* For example, for desktop screens */
+
+  .siteName a {
+    font-size: 50px;
+  
+  }
+
+  
+  #tools a {
+  font-size: 25px;
+  }
+
+  nav li {
+    font-size: 25px;
+  }
+
+
+  body {
+    background-image: url('/images/site/small_check.jpg');
+    background-size: cover; 
+  }
+  
+  #container{
+    border: 5px solid #007bff;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 700px;
+    margin:auto;
+  }
+
+  #content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+    padding: 20px;
+  }
+
+  .hero{
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .delorean_upgrades{
+    grid-area: 2 / 1 / 3 / 2;
+    align-self: start;
+    padding: 0px;
+  }
+
+  .delorean_reviews{
+    grid-area: 2 / 2 / 3 / 3; 
+    align-self: start;
+  }
+  .delorean_reviews ul{
+    padding-top: 10px;
+  }
+  .delorean_reviews ul li{
+    font-size: 25px;
+  }
+
+  #delorean{
+    top:-250px;
+    font-size: 25px;
+  }
+
+  #delorean h2{
+    font-size: 25px;
+  }
+
+  footer{
+    font-size: 25px;
+  }
+
 }
