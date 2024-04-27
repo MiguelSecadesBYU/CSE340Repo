@@ -26,6 +26,11 @@
   text-decoration: underline;
 }
 
+.siteName a img{
+  width: 15%;
+  margin: -5px;
+}
+
 #tools a {
   color: #222; /* Dark link color */
   text-decoration: none;
