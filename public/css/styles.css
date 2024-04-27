@@ -18,7 +18,8 @@
 .siteName a {
   color: #222; /* Dark link color */
   text-decoration: none;
-  font-size: 18px;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .siteName a:hover {
@@ -38,7 +39,7 @@
 
 /* Navigation styles */
 nav ul {
-  list-style: none;
+  list-style: none; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,9 +64,11 @@ footer {
 
 /* Hero section styles */
 .hero {
-  text-align: center;
+  text-align: left;
   padding: 20px;
-  background-color: #f9f9f9;
+  padding-top: 0px;
+  background-color: #fff;
+  height: 35vh;
 }
 
 .hero h1 {
@@ -76,29 +79,34 @@ footer {
 .hero img {
   max-width: 100%;
   height: auto; /* Ensure image maintains aspect ratio */
-  margin-bottom: 20px;
+  
 }
 
 #delorean {
   position: relative; /* Enable positioning */
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
   color: #007bff; /* Light blue text color */
-  padding: 20px;
-  border-radius: 5px;
+  padding: 2px;
+  padding-top: 0px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width:fit-content; /* Adjust as needed */
-  margin: 0 auto; /* Center horizontally */
+  max-width:40%;
   z-index: 1; /* Ensure it's above the image */
+  top: -200px;
+  
 }
 
 #delorean h2 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
+  font-weight: bold;
 }
 
 #delorean ul {
   list-style: none;
-  margin-bottom: 20px;
+  text-align: start;
+  padding: 0px;
+  margin-left: 16px; 
 }
 
 #delorean li {
@@ -106,11 +114,62 @@ footer {
 }
 
 #delorean button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #fff;
   border: none;
-  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  max-width: 75%;
+  max-width: fit-content;
+}
+
+/* Delorean reviews section styles */
+.delorean_reviews h1{
+  margin-left: 20px;
+}
+
+
+/* Delorean upgrades section styles */
+.delorean_upgrades {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.2fr repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.delorean_upgrades h1{
+  grid-area: 1 / 1 / 2 / 3;
+}
+#upgrade1{
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: #007bff;
+  color:#fff;
+  width: 125px;
+  padding: 10px;
+  border-radius: 10px;
+}
+#upgrade2{
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: #007bff;
+  color:#fff;
+  width: 125px;
+  padding: 10px;
+  border-radius: 10px;
+}
+#upgrade3{
+  grid-area: 3 / 1 / 4 / 2; 
+  background-color: #007bff;
+  color:#fff;
+  width: 125px;
+  padding: 10px;
+  border-radius: 10px;
+}
+#upgrade4{
+  grid-area: 3 / 2 / 4 / 3;
+  background-color: #007bff;
+  color:#fff;
+  width: 125px;
+  padding: 10px;
+  border-radius: 10px;
 }
