@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+main{
+  padding:10px;
+}
+
 /* Header styles */
 #top-header {
   background-color: #fff; /* White background color */

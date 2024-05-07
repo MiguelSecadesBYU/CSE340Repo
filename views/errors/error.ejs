@@ -1,0 +1,14 @@
+<!--
+ *  Content heading, adding the title and the h1 
+ *  with the same value
+-->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <!--
+*  Message Block
+-->
+<%= message %>
