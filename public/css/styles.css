@@ -236,6 +236,26 @@ h1{
 
 
 
+/*Car Detail page */
+#inv-detail{
+  padding: 0;
+  display:block;
+  justify-content:left;
+
+}
+#inv-detail img{
+  width: 100%;
+}
+#detail-price, #detail-color{
+  background-color: GhostWhite;
+  padding:10px;
+}
+#detail-description, #detail-miles{
+  padding:10px;
+}
+#detail-price h3, #detail-price span, #detail-description h3, #detail-color h3, #detail-miles h3{
+  display: inline;
+}
 
 
 
@@ -317,15 +337,33 @@ h1{
 
   /* Clasification page */
   #inv-display{
-    flex-direction:row;
-  }
-
-  #inv-display li{
-    margin:20px;
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   }
 
   #inv-display img{
-    height: 113px;
+    height: 100%;
+  }
+
+
+  /* Car detail page*/
+  #inv-detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr repeat(2, 1fr) 2fr repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+  }
+  #inv-detail h1{
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  #inv-detail img{
+    grid-area: 2 / 1 / 7 / 2;
+  
+  }
+  #inv-detail h2{
+    margin-top: 0px;;
   }
 
 }
