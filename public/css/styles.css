@@ -257,6 +257,21 @@ h1{
   display: inline;
 }
 
+/* Messages style -*/
+ul.notice, ul.error{
+  list-style: none; 
+  margin-bottom: 50px;
+  margin-top: -20px;
+  font-weight: bold;
+}
+ul.error{
+  color:red;
+}
+ul.notice{
+  color:#007bff;
+}
+
+
 
 
 /* Media query for devices with a width greater than 768px */
