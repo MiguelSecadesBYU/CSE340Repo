@@ -15,6 +15,7 @@ const inventoryRoute  = require("./routes/inventoryRoute")
 const utilities = require('./utilities/index')
 const session = require("express-session")
 const pool = require('./database/')
+const accountRoute = require("./routes/accountRoute")
 
 
 
@@ -55,6 +56,8 @@ app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 app.use("/inv", inventoryRoute)
+// Account routes
+app.use("/account", accountRoute)
 
 
 //Intentional error

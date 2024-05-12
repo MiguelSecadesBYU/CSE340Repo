@@ -272,6 +272,77 @@ ul.notice{
 }
 
 
+/* General form styles */
+.login-form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #32475C;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/* Styles for the input field labels */
+.email-label, .password-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Styles for the input fields */
+.account_email, .account_password {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Styles for the password requirements text */
+.password-requirements {
+  display:block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+
+/* Styles for the login button */
+.login-button {
+  display: block;
+  background-color:#fff;
+  color:#222;
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px auto;
+  transition-duration: 0.4s;
+  border-radius: 20px;
+}
+
+.login-button:hover {
+   transform: scale(1.1);
+}
+
+/* Styles for the sign-up link */
+.account-query{
+  text-align: center;
+}
+.sign-up-link {
+  color:#fff; 
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* Media query for devices with a width greater than 768px */
@@ -380,6 +451,16 @@ ul.notice{
   #inv-detail h2{
     margin-top: 0px;;
   }
+
+
+  /* General form styles */
+.login-form {
+  width: 80%;
+  font-size: 20px;
+}
+.password-requirements {
+  font-size: 20px;
+}
 
 }
 
