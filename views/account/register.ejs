@@ -16,22 +16,25 @@
 
 
 <!--
-*  Login form
+*  Register form
 -->
-<form id="loginForm" class="login-form">
-    <label for="account_email" class="email-label">Email Address</label>
+<form id="RegisterForm" class="register-form">
+    <label for="account_firstname" class="firstname-label">First name</label>
+    <input type="text" id="account_firstname" name="account_firstname" class="account_firstname" required>
+
+    <label for="account_lastname" class="lastname-label">Last name</label>
+    <input type="text" id="account_lastname" name="account_lastname" class="account_lastname" required>
+
+    <label for="account_email" class="email-label">Email Address:</label>
     <input type="email" id="account_email" name="account_email" class="account_email" required>
 
     <label for="account_password" class="password-label">Password</label>
     <input type="password" id="account_password" name="account_password" class="account_password" required>
     <small class="password-requirements">Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</small>
     <span id="pswBtn">Show Password</span>
-    <button type='submit' id='loginButton' class='login-button'>Login</button>
-    
-    <p class="account-query">No account? 
-        <a href="register" id ="signUpLink" class ="sign-up-link">Sign-up</a>
-     </p> 
-</form>
 
+    <button type='submit' id='loginButton' class='login-button'>Login</button>
+
+</form>
 
 <script src="/js/script.js"></script>

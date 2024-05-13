@@ -11,8 +11,11 @@ const utilities = require("../utilities")
 
 /* ***********************************
 *  Deliver Login View
-*  Unit 4, deliver login view activity
+*  Unit 4, deliver login and register view activity
 * ********************************** */
 router.get("/login", utilities.handleErrors(accountController.buildLogin))
+router.get("/register", utilities.handleErrors(accountController.buildRegister))
+
+
 
 module.exports = router
