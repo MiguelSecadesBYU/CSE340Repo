@@ -65,12 +65,13 @@ Util.buildClassificationGrid = async function(data){
 Util.buildInventoryGrid = async function(data){
   let grid
   if(data.length > 0){
-    grid = '<ul id="inv-detail">'
+    grid = '<div id="inv-detail">'
     data.forEach(vehicle => { 
+     
       grid += '<h1>'+ vehicle.inv_year +' '+ vehicle.inv_make +' '+ vehicle.inv_model +'</h1>'
       grid += '<img src="' + vehicle.inv_image
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
-      +' on CSE Motors" />'
+      +' on CSE Motors">'
       grid += '<h2>'+ vehicle.inv_make +' '+ vehicle.inv_model +' Details</h2>' 
       grid += '<div id="detail-price">'
       grid += '<h3>Price: </h3><span>$'
@@ -85,8 +86,9 @@ Util.buildInventoryGrid = async function(data){
       grid += '<div id="detail-miles">'
       grid += '<h3>Miles: </h3>'+ '<span>'+ new Intl.NumberFormat('en-US').format(vehicle.inv_miles) + '</span>'
       grid +='</div>'
+      
     })
-   // grid += '</ul>'
+   grid += '</div>'
   } else { 
     grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
     

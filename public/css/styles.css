@@ -336,13 +336,22 @@ ul.notice{
 }
 
 /* Styles for the sign-up link */
-.account-query{
-  text-align: center;
+input:required:focus:invalid {
+  background-image: url(/images/site/invalid.png);
+  background-size: 18px;
+  background-position: right top;
+  background-repeat: no-repeat;
 }
-.sign-up-link {
-  color:#fff; 
-  font-weight: bold;
+
+input:required:valid {
+  background-image: url(/images/site/valid.png);
+  background-size: 18px;
+  background-position: right top;
+  background-repeat: no-repeat;
 }
+
+
+
 
 
 
