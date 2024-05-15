@@ -20,8 +20,6 @@ async function buildLogin(req, res, next) {
   }
   
 
-
-
 /* ****************************************
 *  Deliver registration view
 * *************************************** */
@@ -74,4 +72,4 @@ async function registerAccount(req, res) {
 
 
 
-module.exports = { buildLogin, buildRegister, registerAccount }
+module.exports = { buildLogin, buildRegister, registerAccount}
