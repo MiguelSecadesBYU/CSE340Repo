@@ -3,14 +3,24 @@
  *  with the same value
 -->
 <% if (title) { %>
-    <h1><%= title %></h1>
-    <% } else {
-      res.redirect('/')
-    } %>
-        <!--
+  <h1><%= title %></h1>
+  <% } else {
+    res.redirect('/')
+  } %>
+      <!--
 *  Message Block
 -->
 <%- messages() %>
+
+
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
 
 
 
@@ -19,18 +29,19 @@
 *  Login form
 -->
 <form id="loginForm" class="login-form" action="/account/login" method="post">
-    <label for="account_email" class="email-label">Email Address</label>
-    <input type="email" id="account_email" name="account_email" class="account_email" required>
+  <label for="account_email" class="email-label">Email Address</label>
+  <input type="email" id="account_email" name="account_email" class="account_email" required value="<%= locals.account_email %>">
 
-    <label for="account_password" class="password-label">Password</label>
-    <input type="password" id="account_password" name="account_password" class="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$>
-    <small class="password-requirements">Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</small>
-    <span id="pswBtn">Show Password</span>
-    <button type='submit' id='loginButton' class='login-button'>Login</button>
-    
-    <p class="account-query">No account? 
-        <a href="register" id ="signUpLink" class ="sign-up-link">Sign-up</a>
-     </p> 
+  <label for="account_password" class="password-label">Password</label>
+  <input type="password" id="account_password" name="account_password" class="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+ 
+  <small class="password-requirements">Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.</small>
+  <span id="pswBtn">Show Password</span>
+  <button type="submit" id="loginButton" class="login-button">Login</button>
+
+  <p class="account-query">No account? 
+      <a href="register" id="signUpLink" class="sign-up-link">Sign-up</a>
+   </p> 
 </form>
 
 

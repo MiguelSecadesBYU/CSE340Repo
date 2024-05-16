@@ -16,6 +16,7 @@ async function buildLogin(req, res, next) {
     res.render("account/login", {
       title: "Login",
       nav,
+      errors: null,
     })
   }
   
@@ -61,6 +62,39 @@ async function registerAccount(req, res) {
     req.flash("notice", "Sorry, the registration failed.")
     res.status(501).render("account/register", {
       title: "Registration",
+      nav,
+    })
+  }
+}
+
+
+
+
+/* ****************************************
+*  Process Loggin
+* *************************************** */
+async function loginAccount(req, res) {
+  let nav = await utilities.getNav()
+  const {account_email, account_password } = req.body
+
+  const regResult = await accountModel.loginAccount(
+    account_email,
+    account_password
+  )
+
+  if (regResult) {
+    req.flash(
+      "notice",
+      `Congratulations, you\'re loggued`
+    )
+    res.status(201).render("account/login", {
+      title: "Login",
+      nav,
+    })
+  } else {
+    req.flash("notice", "Sorry, the login process failed.")
+    res.status(501).render("account/login", {
+      title: "Login",
       nav,
     })
   }

@@ -15,6 +15,20 @@ async function registerAccount(account_firstname, account_lastname, account_emai
   }
 
 
+  /* *****************************
+*   Login new account
+* *************************** */
+async function loginAccount(account_email, account_password){
+  try {
+    const sql = "SELECT * FROM account WHERE account_email = $1 and account_password = $2"
+    return await pool.query(sql, [account_email, account_password])
+  } catch (error) {
+    return error.message
+  }
+}
+
+
+
 
   /* **********************
  *   Check for existing email
