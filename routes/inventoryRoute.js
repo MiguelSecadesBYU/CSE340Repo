@@ -10,4 +10,12 @@ router.get("/type/:classificationId", utilities.handleErrors(invController.build
 // Route to build inventory by Detail view
 router.get("/detail/:inventoryId", utilities.handleErrors(invController.buildByInventoryId));
 
+// Route to build management view
+router.get("/inv", utilities.handleErrors(invController.buildManagement));
+
+
+
+
+
+
 module.exports = router;

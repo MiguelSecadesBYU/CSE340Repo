@@ -1,0 +1,25 @@
+<!--
+ *  Content heading, adding the title and the h1 
+ *  with the same value
+-->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+  <!--
+ *  Message Block
+-->
+  <%- messages() %>
+
+
+
+<!--
+ *  Managenent links
+-->
+<ul id="management-links">
+    <li><a href="/new_classification">Add new classification</a></li>
+    <li><a href="/new_inventory">Add new inventory</a></li>
+</ul>
+  
+  
