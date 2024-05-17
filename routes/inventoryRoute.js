@@ -20,7 +20,7 @@ router.get("/add-classification", utilities.handleErrors(invController.buildAddC
 
 // Process the registration data
 router.post(
-    "//add-classification",
+    "/add-classification",
     managementValidate.classificationRules(),
     managementValidate.checkClassificationData,
     utilities.handleErrors(invController.addClassification)
