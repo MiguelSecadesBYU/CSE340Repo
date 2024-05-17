@@ -54,4 +54,30 @@ invCont.buildManagement = async function (req, res, next) {
   }
 };
 
+
+/* ***************************
+ *  Build add Classification view
+ * ************************** */
+invCont.buildAddClassification = async function (req, res, next) {
+  try {
+    let nav = await utilities.getNav();
+    res.render("./inventory/add-classification", {
+      title: "Add new classification",
+      nav,
+      errors: null,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
+
+
+
+
+
+
+
 module.exports = invCont

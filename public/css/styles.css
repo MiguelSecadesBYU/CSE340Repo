@@ -273,7 +273,7 @@ ul.notice{
 
 
 /* General form styles */
-.login-form, .register-form {
+.login-form, .register-form, .addClassificationForm {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -283,14 +283,14 @@ ul.notice{
 }
 
 /* Styles for the input field labels */
-.email-label, .password-label, .firstname-label, .lastname-label {
+.email-label, .password-label, .firstname-label, .lastname-label, .classification_name_label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
 /* Styles for the input fields */
-.account_email, .account_password, .account_firstname, .account_lastname {
+.account_email, .account_password, .account_firstname, .account_lastname, .classification_name {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -306,7 +306,7 @@ ul.notice{
 
 
 /* Styles for the login button */
-.login-button {
+.login-button, .addClassificationButton {
   display: block;
   background-color:#fff;
   color:#222;
@@ -472,7 +472,7 @@ input:required:valid {
 
 
   /* General form styles */
-.login-form {
+  .login-form, .register-form, .addClassificationForm {
   width: 80%;
   font-size: 20px;
 }

@@ -13,6 +13,9 @@ router.get("/detail/:inventoryId", utilities.handleErrors(invController.buildByI
 // Route to build management view
 router.get("/", utilities.handleErrors(invController.buildManagement));
 
+// Route to build add classification view
+router.get("/add-classification", utilities.handleErrors(invController.buildAddClassification));
+
 
 
 
