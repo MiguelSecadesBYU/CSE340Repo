@@ -43,13 +43,15 @@ invCont.buildByInventoryId = async function (req, res, next) {
  *  Build management view
  * ************************** */
 invCont.buildManagement = async function (req, res, next) {
-  let nav = await utilities.getNav()
-  res.render("./inventory/management", {
-    title: "Management",
-    nav,
-    //grid,
-  })
-}
-
+  try {
+    let nav = await utilities.getNav();
+    res.render("./inventory/management", {
+      title: "Management",
+      nav,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = invCont
