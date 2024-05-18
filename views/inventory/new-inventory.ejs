@@ -1,0 +1,66 @@
+<!--
+ *  Content heading, adding the title and the h1 
+ *  with the same value
+-->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+        <!--
+  *  Message Block
+  -->
+  <%- messages() %>
+  
+  
+  
+  <% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+  
+  
+  
+  
+  <!--
+  *  New Inventory form
+  -->
+  <form id="newInventoryForm" class="newInventoryForm" action="/inventory/new-inventory" method="post">
+    <label for="inv_image" class="inv_image_label">Image</label>
+    <input type="text" id="inv_image" name="inv_image" class="inv_image" required>
+
+    <label for="inv_thumbnail" class="inv_thumbnail_label">Thumbnail</label>
+    <input type="text" id="inv_thumbnail" name="inv_thumbnail" class="inv_thumbnail" required>
+    
+    <label for="inv_make" class="inv_make_label">Make</label>
+    <input type="text" id="inv_make" name="inv_make" class="inv_make" required>
+
+    <label for="inv_model" class="inv_model_label">Model</label>
+    <input type="text" id="inv_model" name="inv_model" class="inv_model" required>
+
+    <label for="inv_year" class="inv_year_label">Year</label>
+    <input type="text" id="inv_year" name="inv_year" class="inv_year" required pattern="[0-9]">
+
+    <label for="classification_name" class="classification_name_label">Classification</label>
+    <%- classificationList %>
+   
+
+    <label for="inv_description" class="inv_description_label">Description</label>
+    <input type="text" id="inv_description" name="inv_description" class="inv_description" required>
+
+    <label for="inv_price" class="inv_price_label">Price</label>
+    <input type="text" id="inv_price" name="inv_price" class="inv_price" required pattern="[0-9]">
+
+    <label for="inv_miles" class="inv_miles_label">Miles</label>
+    <input type="text" id="inv_miles" name="inv_miles" class="inv_miles" required pattern="[0-9]">
+
+    <label for="inv_color" class="inv_color_label">Color</label>
+    <input type="text" id="inv_color" name="inv_color" class="inv_color" required>
+   
+    
+    <button type="submit" id="newInventoryButton" class="newInventoryButton">Add Vehicle</button>
+  </form>
+  

@@ -273,7 +273,7 @@ ul.notice{
 
 
 /* General form styles */
-.login-form, .register-form, .addClassificationForm {
+.login-form, .register-form, .addClassificationForm, .newInventoryForm {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -283,14 +283,18 @@ ul.notice{
 }
 
 /* Styles for the input field labels */
-.email-label, .password-label, .firstname-label, .lastname-label, .classification_name_label {
+.email-label, .password-label, .firstname-label, .lastname-label, .classification_name_label,
+.inv_image_label, .inv_thumbnail_label, .inv_make_label, .inv_model_label, .inv_year_label,
+.inv_description_label, .inv_price_label, .inv_miles_label, .inv_color_label, .classification_name_label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
 /* Styles for the input fields */
-.account_email, .account_password, .account_firstname, .account_lastname, .classification_name {
+.account_email, .account_password, .account_firstname, .account_lastname, .classification_name,
+.inv_image, .inv_thumbnail, .inv_make, .inv_model, .inv_year, .inv_description, .inv_price,
+.inv_miles, .inv_color, .classificationList {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -306,7 +310,7 @@ ul.notice{
 
 
 /* Styles for the login button */
-.login-button, .addClassificationButton {
+.login-button, .addClassificationButton, .newInventoryButton {
   display: block;
   background-color:#fff;
   color:#222;
@@ -331,7 +335,7 @@ ul.notice{
   font-weight: bold;
 }
 
-.login-button:hover {
+.login-button:hover, .addClassificationButton:hover, .newInventoryButton:hover {
    transform: scale(1.1);
 }
 
@@ -472,7 +476,7 @@ input:required:valid {
 
 
   /* General form styles */
-  .login-form, .register-form, .addClassificationForm {
+  .login-form, .register-form, .addClassificationForm, .newInventoryForm {
   width: 80%;
   font-size: 20px;
 }
