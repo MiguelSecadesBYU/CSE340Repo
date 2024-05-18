@@ -74,6 +74,26 @@ invCont.buildAddClassification = async function (req, res, next) {
 
 
 
+/* ***************************
+ *  Build new Inventory view
+ * ************************** */
+invCont.buildNewInventory = async function (req, res, next) {
+  try {
+    let nav = await utilities.getNav();
+    let classificationList = await utilities.buildClassificationList();
+    res.render("./inventory/new-inventory", {
+      title: "Add new vehicle",
+      nav,
+      classificationList,
+      errors: null,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
 
 /* ****************************************
 *  Process Add New Classification
