@@ -23,3 +23,4 @@ router.get("/new-inventory", utilities.handleErrors(invController.buildNewInvent
 
 
 module.exports = router;
+

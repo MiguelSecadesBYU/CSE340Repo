@@ -42,7 +42,7 @@ invCont.buildByInventoryId = async function (req, res, next) {
 /* ***************************
  *  Build management view
  * ************************** */
-invCont.buildManagement = async function (req, res, next) {
+const buildManagement = async function (req, res, next) {
   try {
     let nav = await utilities.getNav();
     res.render("./inventory/management", {
@@ -53,6 +53,7 @@ invCont.buildManagement = async function (req, res, next) {
     next(error);
   }
 };
+
 
 
 /* ***************************
@@ -94,10 +95,49 @@ invCont.buildNewInventory = async function (req, res, next) {
 
 
 
+/* ****************************************
+*  Process Add New Classification
+* *************************************** */
+async function addClassification(req, res) {
+  let nav = await utilities.getNav()
+  const { classification_name
+  } = req.body
+
+  const regResult = await invModel.addClassification(
+    classification_name
+  )
+
+  if (regResult) {
+    req.flash(
+      "notice",
+      `Congratulations, ${classification_name} was added succesfuly.`
+    )
+    res.status(201).render("inv/management", {
+      title: "Management",
+      nav,
+      errors: null,
+    })
+  } else {
+    req.flash("notice", "Sorry, something failed.")
+    res.status(501).render("inv/add-classification", {
+      title: "Add Classification",
+      nav,
+      errors: null,
+    })
+  }
+}
 
 
 
 
 
 
-module.exports = invCont
+
+
+
+
+
+
+module.exports = {invCont, addClassification, buildManagement }
+
+
