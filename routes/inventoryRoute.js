@@ -20,6 +20,7 @@ router.get("/add-classification", utilities.handleErrors(invController.buildAddC
 router.get("/new-inventory", utilities.handleErrors(invController.buildNewInventory));
 
 
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
 
 
 module.exports = router;
