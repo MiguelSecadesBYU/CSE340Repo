@@ -18,6 +18,7 @@ const regValidate = require('../utilities/account-validation')
 * ********************************** */
 router.get("/login", utilities.handleErrors(accountController.buildLogin))
 router.get("/register", utilities.handleErrors(accountController.buildRegister))
+router.get("/account_management", utilities.handleErrors(accountController.buildAccountManagement))
 
 // Process the registration data
 router.post(
@@ -35,9 +36,8 @@ router.post(
   "/login",
   regValidate.loginRules(),
   regValidate.checkLoginData,
-  utilities.handleErrors(accountController.loginAccount)
+  utilities.handleErrors(accountController.accountLogin)
 )
-
 
 
 

@@ -1,0 +1,26 @@
+<!--
+ *  Content heading, adding the title and the h1 
+ *  with the same value
+-->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+        <!--
+  *  Message Block
+  -->
+  <%- messages() %>
+  
+  
+  
+  <% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+  
+  <p>You're logged in.</p>
