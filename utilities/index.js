@@ -62,7 +62,7 @@ Util.buildClassificationGrid = async function(data){
 /* **************************************
 * Build the car detail view
 * ************************************ */
-Util.buildInventoryGrid = async function(data){
+Util.buildInventoryGrid = async function(data, comments){
   let grid
   if(data.length > 0){
     grid = '<div id="inv-detail">'
@@ -87,14 +87,31 @@ Util.buildInventoryGrid = async function(data){
       grid += '<h3>Miles: </h3>'+ '<span>'+ new Intl.NumberFormat('en-US').format(vehicle.inv_miles) + '</span>'
       grid +='</div>'
       
+      // Add comments section
+      grid += '<div id="comments-section">'
+      grid += '<h3>Comments:</h3>'
+      if (comments.length > 0) {
+        comments.forEach(comment => {
+          grid += '<p>' + comment.comment + '</p>'
+        })
+      } else {
+        grid += '<p>No comments yet. Be the first to comment!</p>'
+      }
+      grid += '<form action="/inv/comments" method="POST">'
+      grid += '<input type="hidden" name="inv_id" value="' + vehicle.inv_id + '">'
+      grid += '<textarea name="comment" required></textarea>'
+      grid += '<button type="submit">Submit</button>'
+      grid += '</form>'
+      grid += '</div>'
+      
     })
    grid += '</div>'
   } else { 
     grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
-    
   }
   return grid
 }
+
 
 
 

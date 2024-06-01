@@ -1,4 +1,5 @@
 const invModel = require("../models/inventory-model")
+const commentModel = require("../models/comment-model")
 const utilities = require("../utilities/")
 
 const invCont = {}
@@ -26,7 +27,8 @@ invCont.buildByClassificationId = async function (req, res, next) {
 invCont.buildByInventoryId = async function (req, res, next) {
   const inventory_id = req.params.inventoryId
   const data = await invModel.getInventoryByInventoryId(inventory_id) // Aquí es donde se hizo el cambio
-  const grid = await utilities.buildInventoryGrid(data)
+  const comments = await commentModel.findByInventoryId(inventory_id) // Obtener comentarios
+  const grid = await utilities.buildInventoryGrid(data, comments) // Pasar comentarios al generador de grid
   let nav = await utilities.getNav()
   const className = data[0].inv_model
   res.render("./inventory/details", {
@@ -35,8 +37,6 @@ invCont.buildByInventoryId = async function (req, res, next) {
     grid,
   })
 }
-
-
 
 
 /* ***************************
@@ -57,7 +57,6 @@ const buildManagement = async function (req, res, next) {
 };
 
 
-
 /* ***************************
  *  Build add Classification view
  * ************************** */
@@ -73,7 +72,6 @@ invCont.buildAddClassification = async function (req, res, next) {
     next(error);
   }
 };
-
 
 
 /* ***************************
@@ -95,19 +93,14 @@ invCont.buildNewInventory = async function (req, res, next) {
 };
 
 
-
-
 /* ****************************************
 *  Process Add New Classification
 * *************************************** */
 async function addClassification(req, res) {
   let nav = await utilities.getNav()
-  const { classification_name
-  } = req.body
+  const { classification_name } = req.body
 
-  const regResult = await invModel.addClassification(
-    classification_name
-  )
+  const regResult = await invModel.addClassification(classification_name)
 
   if (regResult) {
     req.flash(
@@ -130,7 +123,6 @@ async function addClassification(req, res) {
 }
 
 
-
 /* ***************************
  *  Return Inventory by Classification As JSON
  * ************************** */
@@ -144,13 +136,4 @@ invCont.getInventoryJSON = async (req, res, next) => {
   }
 }
 
-
-
-
-
-
-
-
-module.exports = {invCont, addClassification, buildManagement}
-
-
+module.exports = { invCont, addClassification, buildManagement }
